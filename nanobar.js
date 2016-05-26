@@ -87,6 +87,12 @@
         applyGo,
         nanobar = {
           el: el,
+          reset: function () {
+            for (var i = 0; i < el.childNodes.length; i++) {
+                var bar = el.childNodes[i];
+                if (bar.clientWidth > 0) bar.style.display = 'none';
+            }
+          },
           go: function (p) {
             // expand bar
             applyGo(p)
